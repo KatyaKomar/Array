@@ -3,6 +3,7 @@ package by.task.komar.service.impl;
 import by.task.komar.entity.EntityArray;
 import by.task.komar.exception.ArrayException;
 import by.task.komar.service.ArraySortService;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,7 +30,7 @@ public class SortServiceImpl implements ArraySortService {
         int realMaxElement = searchService.findMax(arrayEntity);
         int realMinElement = searchService.findMin(arrayEntity);
         if (realMaxElement - realMinElement > maxElement) {
-            logger.error("Elements are too large");
+            logger.log(Level.ERROR, "Elements are too large");
             throw new ArrayException("Elements are too large");
         }
         int[] countingArr = new int[realMaxElement - realMinElement + 1];
@@ -42,7 +43,7 @@ public class SortServiceImpl implements ArraySortService {
                 result.setElement(i + realMinElement, l++);
             }
         }
-        logger.info("Sorted array is:" + result);
+        logger.log(Level.INFO, "Sorted array is:" + result);
         return result;
     }
 
@@ -50,7 +51,7 @@ public class SortServiceImpl implements ArraySortService {
     public EntityArray mergeSort(EntityArray arrayEntity) throws ArrayException {
         EntityArray result = new EntityArray(arrayEntity.size());
         recursiveMergeSort(arrayEntity, result, 0, arrayEntity.size() - 1);
-        logger.info("Merge sort finished. Sorted array is:" + result);
+        logger.log(Level.INFO, "Merge sort finished. Sorted array is:" + result);
         return result;
     }
 

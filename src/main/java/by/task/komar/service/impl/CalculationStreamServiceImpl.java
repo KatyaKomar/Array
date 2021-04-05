@@ -18,8 +18,8 @@ public class CalculationStreamServiceImpl implements ArrayCalculationService {
             logger.log(Level.ERROR, "There are no elements in array");
             throw new ArrayException("There are no elements in array");
         }
-        logger.log(Level.INFO, "Sum of elements: " + Arrays.stream(array.getEntityArray()).sum());
         int sum = Arrays.stream(array.getEntityArray()).sum();
+        logger.log(Level.INFO, "Sum of elements: " + sum);
         return sum;
     }
 
@@ -30,7 +30,7 @@ public class CalculationStreamServiceImpl implements ArrayCalculationService {
             throw new ArrayException("There are no elements in array");
         }
         double average = Arrays.stream(array.getEntityArray()).average().getAsDouble();
-        logger.log(Level.INFO, "Average of Array: " + average);
+        logger.log(Level.INFO, "Average of array: " + average);
         return average;
     }
 

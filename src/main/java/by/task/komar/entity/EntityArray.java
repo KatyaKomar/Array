@@ -29,7 +29,8 @@ public class EntityArray {
     }
 
     public int[] getEntityArray() {
-        return this.array.clone();
+        int[] cloneArray = this.array.clone();
+        return cloneArray;
     }
 
     public int getElement(int position) throws ArrayException {
@@ -54,16 +55,17 @@ public class EntityArray {
 
     @Override
     public String toString() {
-        StringBuilder string = new StringBuilder("[");
+        StringBuilder stringBuilder = new StringBuilder("[");
         for (int element : array) {
-            string.append(element);
-            string.append(", ");
+            stringBuilder.append(element);
+            stringBuilder.append(", ");
         }
-        if (string.length() > 1) {
-            string.delete(string.length() - 2, string.length());
+        if (stringBuilder.length() > 1) {
+            stringBuilder.delete(stringBuilder.length() - 2, stringBuilder.length());
         }
-        string.append("]");
-        return string.toString();
+        stringBuilder.append("]");
+        String string = stringBuilder.toString();
+        return string;
     }
 
     @Override

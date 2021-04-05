@@ -31,7 +31,7 @@ public class CalculationServiceImpl implements ArrayCalculationService {
             throw new ArrayException("There are no elements in array");
         }
         double average = 1.0 * sumOfArray(array) / array.size();
-        logger.log(Level.INFO, "Average of Array: " + average);
+        logger.log(Level.INFO, "Average of array: " + average);
         return average;
     }
 

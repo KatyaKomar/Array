@@ -2,7 +2,6 @@ package by.test.komar.service;
 
 import by.task.komar.entity.EntityArray;
 import by.task.komar.exception.ArrayException;
-import by.task.komar.service.ArraySortService;
 import by.task.komar.service.impl.SortServiceImpl;
 import org.testng.annotations.Test;
 

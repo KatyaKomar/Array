@@ -21,9 +21,9 @@ public class ArrayReader {
         Scanner scan = new Scanner(reader);
         ArrayValidator validator = new ArrayValidator();
         while (scan.hasNextLine()) {
-            String str = scan.nextLine();
-            if(validator.isValidate(str)){
-                return str;
+            String string = scan.nextLine();
+            if (validator.isValidate(string)) {
+                return string;
             }
         }
         logger.log(Level.ERROR, "There is no correct line in the file!");
